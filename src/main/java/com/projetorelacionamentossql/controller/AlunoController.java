@@ -66,4 +66,16 @@ public class AlunoController {
 			return ResponseEntity.notFound().build();
 		}
 	}
+	
+	@GetMapping("/cidade/{cidade}")
+	public ResponseEntity<List<Aluno>> findByCidade(@PathVariable String cidade) {
+		List<Aluno> aluno = alunoService.findByCidade(cidade);
+		return ResponseEntity.ok(aluno);
+	}
+	
+	@GetMapping("/nome/{nome}")
+	public ResponseEntity<List<Aluno>> findByNome(@PathVariable String nome) {
+		List<Aluno> aluno = alunoService.findByNome(nome);
+		return ResponseEntity.ok(aluno);
+	}
 }

@@ -48,4 +48,12 @@ public class AlunoService {
 		}
 		return false;
 	}
+	
+	public List<Aluno> findByCidade(String cidade) {
+		return alunoRepository.findByCidade(cidade);
+	}
+	
+	public List<Aluno> findByNome(String nome) {
+		return alunoRepository.findByNome(nome);
+	}
 }
